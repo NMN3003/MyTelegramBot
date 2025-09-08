@@ -41,7 +41,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
     if query.data == 'set_role':
-        await query.edit_message_text("لطفا نقش رباط (Prompt) را وارد کن:")
+        await query.edit_message_text("لطفا نقش ربات (Prompt) را وارد کن:")
         return ROLE_INPUT
 
 async def set_role(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -49,7 +49,7 @@ async def set_role(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data['role_prompt'] = role_text
     await update.message.reply_text(
         f"نقش شما ذخیره شد: {role_text}\n"
-        "حال هر پیامی بفرستی، رباط با این نقش جواب می‌دهد."
+        "حال هر پیامی بفرستی، ربات با این نقش جواب می‌دهد."
     )
     return ConversationHandler.END
 
